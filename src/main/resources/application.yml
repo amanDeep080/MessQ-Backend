@@ -1,0 +1,26 @@
+server:
+  port: ${PORT:8080}
+  error:
+    include-message: never
+    include-stacktrace: never
+spring:
+  application:
+    name: messq
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/messq}
+    username: ${DATABASE_USERNAME:messq}
+    password: ${DATABASE_PASSWORD:}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+  flyway:
+    enabled: true
+app:
+  jwt-secret: ${JWT_SECRET:}
+  token-lifetime-seconds: 900
+  timezone: ${MESSQ_TIMEZONE:Asia/Kolkata}
+  mock-payments: ${MOCK_PAYMENTS:false}

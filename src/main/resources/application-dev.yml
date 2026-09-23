@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:h2:file:./.data/messq;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+app:
+  mock-payments: true
+  demo-password: ${MESSQ_DEMO_PASSWORD:}
